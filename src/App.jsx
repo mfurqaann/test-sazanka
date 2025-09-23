@@ -33,6 +33,7 @@ function App() {
   function handleChangeInput(identifier, value) {
     setFormData((prev) => ({ ...prev, [identifier]: value }));
     setDidEdit((prev) => ({ ...prev, [identifier]: false }));
+    setIsSubmitted(false);
   }
 
   function handleBlur(identifier) {
@@ -66,10 +67,12 @@ function App() {
               onChange={(e) => handleChangeInput("input", e.target.value)}
               onBlur={() => handleBlur("input")}
               id="inputNumber"
-              placeholder="Masukkan angka"
+              placeholder="Masukkan angka (Contoh: 3 2 4 1)"
             />
+            {isInputNotValid && (
+              <small className="error-text">Input is not valid</small>
+            )}
           </div>
-          {isInputNotValid && <p className="error-text">Input is not valid</p>}
           <div className="mb-3">
             <label htmlFor="targetNumber" className="form-label">
               Target
@@ -84,7 +87,7 @@ function App() {
               placeholder="Masukkan target"
             />
             {isTargetNotValid && (
-              <p className="error-text">Target is required</p>
+              <small className="error-text">Target is required</small>
             )}
           </div>
           <button className="btn btn-primary btn-submit">Submit</button>
@@ -94,16 +97,25 @@ function App() {
         <div className="card">
           <div className="card-header">
             <h2>Hasil</h2>
-            <h3 className="subtitle"></h3>
+            <h3 className="subtitle">Hasil pasangan indeks</h3>
           </div>
           <div className="card-body">
             {result.length > 0 ? (
               <>
-                <div>Input: {JSON.stringify(displayInput.input)}</div>
-                <div className="mb-3">Target: {displayInput.target}</div>
+                <div>
+                  <span className="fw-bold">Input: </span>
+                  {JSON.stringify(displayInput.input)}
+                </div>
+
                 <div className="mb-3">
-                  Pasangan indeks yang menghasilkan jumlah sesuai target yaitu{" "}
-                  <strong>{JSON.stringify(result)}</strong>
+                  <span className="fw-bold">Target: </span>
+                  {displayInput.target}
+                </div>
+                <div className="mb-3">
+                  <p>
+                    Pasangan indeks yang menghasilkan jumlah sesuai target yaitu{" "}
+                    <strong>{JSON.stringify(result)}</strong>
+                  </p>
                 </div>
               </>
             ) : (
