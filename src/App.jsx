@@ -113,7 +113,8 @@ function App() {
                 </div>
                 <div className="mb-3">
                   <p>
-                    Pasangan indeks yang menghasilkan jumlah sesuai target yaitu{" "}
+                    Terdapat {result.length} pasangan indeks yang menghasilkan
+                    jumlah sesuai target yaitu{" "}
                     <strong>{JSON.stringify(result)}</strong>
                   </p>
                 </div>

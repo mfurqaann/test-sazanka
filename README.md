@@ -1,12 +1,34 @@
-# React + Vite
+# Two Sum Logic App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React application to solve the **Two Sum** problem.  
+User can input an array of numbers and a target value, then the app will display the pair(s) of numbers that sum up to the target.
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+https://mfurqaann-test-sazanka.vercel.app/
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/mfurqaann/test-sazanka.git
+   cd test-sazanka
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Run the Development Server**
+
+   ```bash
+   npm run dev
+   ```
+
+4. **Open in Browser**
+   ```
+   http://localhost:5173
+   ```
