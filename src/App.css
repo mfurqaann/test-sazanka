@@ -8,11 +8,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
   height: 100vh;
 }
 
 .card {
   width: 22rem;
+  height: 25rem;
   background: #fff;
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
@@ -85,4 +88,12 @@ body {
   background: #006edc;
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(30, 144, 255, 0.3);
+}
+
+.error-text {
+  color: red;
+}
+
+.result-text {
+  font-weight: bold;
 }
