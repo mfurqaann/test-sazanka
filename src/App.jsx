@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-import { getSumArray } from "./logic/twoSum";
+import { getTwoSum } from "./logic/twoSum";
 
 function App() {
   const [formData, setFormData] = useState({
@@ -23,7 +23,7 @@ function App() {
   function handleSubmit(e) {
     e.preventDefault();
     const inputToArray = formData.input.split(" ").map((item) => Number(item));
-    const inputResult = getSumArray(inputToArray, Number(formData.target));
+    const inputResult = getTwoSum(inputToArray, Number(formData.target));
 
     setDisplayInput({ input: inputToArray, target: formData.target });
     setResult(inputResult);
@@ -46,6 +46,8 @@ function App() {
 
   const isTargetNotValid =
     didEdit.target && formData.target.trim().length === 0;
+
+  const isInvalid = isInputNotValid || isTargetNotValid;
 
   return (
     <div className="container">
@@ -90,7 +92,9 @@ function App() {
               <small className="error-text">Target is required</small>
             )}
           </div>
-          <button className="btn btn-primary btn-submit">Submit</button>
+          <button disabled={isInvalid} className="btn btn-primary btn-submit">
+            Submit
+          </button>
         </form>
       </div>
       {isSubmitted && (

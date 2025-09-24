@@ -1,4 +1,4 @@
-export function getSumArray(input, target) {
+export function getTwoSum(input, target) {
     let result = [];
 
     for (let i = 0; i < input.length; i++) {

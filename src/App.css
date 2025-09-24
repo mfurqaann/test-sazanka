@@ -15,7 +15,7 @@ body {
 
 .card {
   width: 22rem;
-  height: 25rem;
+  min-height: 25rem;
   background: #fff;
   border-radius: 15px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
